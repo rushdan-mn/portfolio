@@ -299,7 +299,7 @@
     }
     .hero-scroll {
       position: absolute;
-      bottom: 36px; left: 50%;
+      bottom: 5px; left: 50%;
       transform: translateX(-50%);
       display: flex;
       flex-direction: column;
@@ -316,7 +316,7 @@
       content: '';
       display: block;
       width: 1px;
-      height: 40px;
+      height: 50px;
       background: linear-gradient(to bottom, rgba(201,168,76,.6), transparent);
       animation: line-grow 2s infinite;
     }
@@ -859,11 +859,15 @@
       display: flex;
       flex-direction: column;
       gap: 20px;
+      text-decoration: none;
+  color: inherit;
     }
     .contact-item {
       display: flex;
       align-items: center;
       gap: 16px;
+      text-decoration: none;
+  color: inherit;
     }
     .contact-item-icon {
       width: 44px; height: 44px;
@@ -1064,17 +1068,15 @@
     </p>
     <div class="hero-badges">
       <span class="badge highlight"><i class="fas fa-certificate"></i> ACCA — 11 of 13 Papers</span>
-      <span class="badge"><i class="fas fa-graduation-cap"></i> B.Com · University of Calicut</span>
+      <span class="badge"><i class="fas fa-graduation-cap"></i> MBA · Mizoram University — Pursuing</span>
+      <span class="badge"><i class="fas fa-graduation-cap"></i> B.Com · University of Calicut — Graduate</span>
       <span class="badge"><i class="fas fa-map-marker-alt"></i> India · Open to Relocation</span>
       <span class="badge"><i class="fas fa-briefcase"></i>Finance Roles</span>
     </div>
     <div class="hero-actions">
-      <a href="Resume_Mohammed Rushdan MN.pdf" download="" class="btn btn-primary">
-        <i class="fas fa-download"></i> Download Resume
-      </a>
-      <a href="#contact" class="btn btn-outline">
-        <i class="fas fa-paper-plane"></i> Get in Touch
-      </a>
+      <a href="#contact" download="" class="btn btn-primary">
+        <i class="fas fa-paper-plane"></i>Get in Touch</a>
+        </div>
     </div>
   </div>
   <div class="hero-scroll">scroll</div>
@@ -1096,7 +1098,7 @@
         <h2 class="section-title">Analytical. Precise.<br>Finance-Driven.</h2>
         <div class="divider"></div>
         <p>
-          Detail-oriented finance and accounting professional with a strong foundation in audit, financial reporting, and compliance. Currently an ACCA Part-Qualified candidate with 11 of 13 papers completed, and a graduate in Bachelor of Commerce from the University of Calicut.
+          Detail-oriented finance and accounting professional with a strong foundation in audit, financial reporting, and compliance. Currently an ACCA Part-Qualified candidate (11 of 13 papers completed), pursuing an MBA, and a graduate in Bachelor of Commerce from University of Calicut.
         </p>
         <p>
           Combines solid accounting knowledge with practical business experience, gained through managing a computer and printing business, along with experience in teaching finance and technology concepts. Also brings working knowledge of data analytics tools and cybersecurity fundamentals.
@@ -1108,6 +1110,10 @@
           <div class="stat-box">
             <div class="stat-num">11<span>/13</span></div>
             <div class="stat-label">ACCA Papers</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-num">MBA<span> Pursuing</span></div>
+            <div class="stat-label">Mizoram University</div>
           </div>
           <div class="stat-box">
             <div class="stat-num">B.Com<span> Graduate</span></div>
@@ -1324,6 +1330,18 @@
       <div class="edu-card">
         <div class="edu-card-top">
           <div class="edu-icon"><i class="fas fa-university"></i></div>
+          <span class="edu-status active">In Progress</span>
+        </div>
+        <div class="edu-degree">Master of Business Administration (MBA)</div>
+        <div class="edu-org">Mizoram University · Central University · Mizoram, India</div>
+        <div class="edu-desc">
+          Pursuing Master of Business Administration (MBA) with focus on finance and strategic management. Covers financial analysis, business strategy, risk management, and leadership. Recognized globally as a postgraduate qualification for finance and management professionals.
+        </div>
+      </div>
+
+      <div class="edu-card">
+        <div class="edu-card-top">
+          <div class="edu-icon"><i class="fas fa-graduation-cap"></i></div>
           <span class="edu-status active">Graduate</span>
         </div>
         <div class="edu-degree">Bachelor of Commerce (B.Com)</div>
@@ -1395,22 +1413,29 @@
           <div class="contact-item">
             <div class="contact-item-icon"><i class="fas fa-envelope"></i></div>
             <div>
-              <div class="contact-item-label">Email</div>
+              <div><a href="mailto:rushdan.mn@yahoo.com" class="contact-item-label">Email</a></div>
               <a href="mailto:rushdan.mn@yahoo.com" class="contact-item-value">rushdan.mn@yahoo.com</a>
             </div>
           </div>
           <div class="contact-item">
             <div class="contact-item-icon"><i class="fas fa-phone"></i></div>
             <div>
-              <div class="contact-item-label">Phone</div>
+              <div><a href="tel:+918943749705" class="contact-item-label">Phone</a></div>
               <a href="tel:+918943749705" class="contact-item-value">+91 89437 49705</a>
             </div>
           </div>
           <div class="contact-item">
             <div class="contact-item-icon"><i class="fas fa-map-marker-alt"></i></div>
             <div>
-              <div class="contact-item-label">Location</div>
-              <div class="contact-item-value">India · Open to Relocation</div>
+              <div><a href="https://www.google.com/maps/place/Kerala/" class="contact-item-label">Location</a></div>
+              <a href="https://www.google.com/maps/place/Kerala/" class="contact-item-value">Kerala, India</a>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-item-icon"><i class="fas fa-file-invoice"></i></div>
+            <div>
+              <div><a href="Resume_Mohammed Rushdan MN.pdf" target="_blank" class="contact-item-label">Resume</a></div>
+              <a href="Resume_Mohammed Rushdan MN.pdf"   target="_blank"   class="contact-item-value"> View / Download</a>
             </div>
           </div>
         </div>
@@ -1421,11 +1446,10 @@
           <a href="mailto:rushdan.mn@yahoo.com" class="social-link" title="Email" aria-label="Email">
             <i class="fas fa-envelope"></i>
           </a>
-          <a href="Resume_Mohammed Rushdan MN.pdf" download="" class="social-link" title="Download Resume" aria-label="Download Resume">
-            <i class="fas fa-file-pdf"></i>
+          <a aria-label="Linktree" title="Linktree" class="social-link" href="https://linktr.ee/rushdan.mn">
+            <i class="fas fa-link"></i>
           </a>
-          <!-- Add more social links here -->
-        </div>
+          </div>
       </div>
       <div class="fade-in visible">
       </div>
@@ -1531,6 +1555,4 @@
     });
   });
 </script>
-
-
 </body></html>
