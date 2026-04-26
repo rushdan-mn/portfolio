@@ -289,6 +289,10 @@
       transform: translateY(-2px);
       box-shadow: 0 8px 24px rgba(201,168,76,.3);
     }
+    .btn-submit {
+      width: 100%;
+      justify-content: center;
+    }
     .btn-outline {
       background: transparent;
       color: var(--white);
@@ -878,10 +882,49 @@
       border-radius: var(--radius);
       padding: 36px;
     }
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      margin-bottom: 16px;
+    }
+    .form-group label {
+      font-size: .78rem;
+      color: rgba(255,255,255,.5);
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      font-family: var(--font-mono);
+    }
+    .form-group input,
+    .form-group textarea {
+      background: rgba(255,255,255,.07);
+      border: 1px solid rgba(255,255,255,.12);
+      color: var(--white);
+      border-radius: var(--radius);
+      padding: 12px 16px;
+      font-family: var(--font-body);
+      font-size: .9rem;
+      outline: none;
+      transition: border-color var(--transition);
+      resize: none;
+    }
+    .form-group input::placeholder,
+    .form-group textarea::placeholder { color: rgba(255,255,255,.25); }
+    .form-group input:focus,
+    .form-group textarea:focus { border-color: var(--gold); }
+    .form-group textarea { height: 110px; }
     .social-links {
       display: flex;
       gap: 12px;
       margin-top: 32px;
+    }
+    .hidden-iframe {
+  display: none;
     }
     .social-link {
       width: 42px; height: 42px;
@@ -894,6 +937,7 @@
       transition: all var(--transition);
     }
     .social-link:hover { background: var(--gold); border-color: var(--gold); color: var(--navy); transform: translateY(-2px); }
+    .hidden-iframe { display: none; }
 
     /* ─────────────────────────────────────────────
        FOOTER
@@ -1401,6 +1445,7 @@
         <div class="divider"></div>
         <p class="contact-info-lead">
           Pursuing opportunities in audit and finance, with interest in Audit Associate and GDS/GDC roles. Happy to connect with recruiters and finance professionals.
+        </p>
         <div class="contact-items">
 
   <!-- Email -->
@@ -1461,8 +1506,67 @@
           </div>
       </div>
       <div class="fade-in visible">
-      </div>
+        <form class="contact-form"
+  action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSeniBYVfgWABYClvICl_kB4qcVbMemAVrY65lQ6kOWGVMdGNw/formResponse"
+  method="POST"
+  target="hidden_iframe"
+  onsubmit="handleSubmit(this)">
+
+  <div class="form-row">
+    <div class="form-group">
+      <label>First Name</label>
+      <input type="text" name="entry.420754953" placeholder="Enter your first name" required>
     </div>
+
+    <div class="form-group">
+      <label>Last Name</label>
+      <input type="text" name="entry.114038876" placeholder="Enter your last name" required>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label>Email Address</label>
+    <input type="email" name="entry.433316138" placeholder="name@example.com" required>
+  </div>
+
+  <div class="form-group">
+    <label>Subject</label>
+    <input type="text" name="entry.2125092195" placeholder="Enter subject here" required>
+  </div>
+
+  <div class="form-group">
+    <label>Message</label>
+    <textarea name="entry.826509167" placeholder="Write your message here..." required></textarea>
+  </div>
+
+  <button type="submit" class="btn btn-primary btn-submit">
+    <i class="fas fa-paper-plane"></i> Send Message
+  </button>
+
+</form>
+
+<iframe name="hidden_iframe" class="hidden-iframe"></iframe>
+
+<script>
+function handleSubmit(form) {
+  const btn = form.querySelector('.btn-submit');
+
+  // change button immediately
+  btn.innerHTML = '<i class="fas fa-check"></i> Sent';
+  btn.style.background = '#2d7a5a';
+  btn.disabled = true;
+
+  // optional: reset after few seconds
+  setTimeout(() => {
+    btn.innerHTML = '<i class="fas fa-paper-plane"></i> Send Message';
+    btn.style.background = '';
+    btn.disabled = false;
+    form.reset();
+  }, 4000);
+}
+</script>
+      </div>
+    </div> 
   </div>
 </section>
 
